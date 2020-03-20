@@ -9,7 +9,12 @@ int main()
 {
 
 
-    obj_poject work("Test_1");
+    obj_poject work;
+
+    string str_1 = "add_project";
+    string str_2 = "prj_test_1";
+
+    work.main_work(str_1,str_2);
 
 
     /*system("mkdir tets");
@@ -17,4 +22,5 @@ int main()
     fout << "Данные данные данные"; // запись строки в файл
     fout.close(); // закрываем файл*/
 
+    return  0;
  }
