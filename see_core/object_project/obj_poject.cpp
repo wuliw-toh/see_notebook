@@ -11,8 +11,8 @@ bool obj_poject::main_work(string command , string value){//основная п�
    int swit_int = command_definition(command);
    switch (swit_int) {
         case 0:flag_out = creature_projekt(value); break;
-       //case 1:
-        case 2: flag_out = giving_name(value);break;
+        case 1:flag_out = add_file_in_system(value);break;
+        case 2:flag_out = giving_name(value);break;
         default: flag_out = false;
 
     }
@@ -67,10 +67,26 @@ bool obj_poject::giving_name(string str){
     return false; // !! ВНИМАНИЕ на РЕТЕРН !!!
 }
 
-bool obj_poject::add_file_in_system(string value){
+bool obj_poject::add_file_in_system(string value ){
     //ЗАЩИТЫ!!!
 
-    //остановился тут
+
+    ofstream fout(treak_to_registr,ios_base::app); // открыаем регист проекта для записи в конец файла
+    fout << value <<endl; // вносим имя нового файла. Потом будут и другие данные но пока только имя
+    fout.close();
+
+
+    ifstream fin("work_cache/main_cache.c_wul"); // открываем кеш текста
+
+    string vrem_treak = Name_Project + "/" +value;//путь к новому файлу
+    ofstream strem_in_new_file(vrem_treak);
+
+    string input_data_vrem = "";
+
+    while (fin >> input_data_vrem) {
+        strem_in_new_file << input_data_vrem << " ";
+    }
+
 
     return  true;
 }

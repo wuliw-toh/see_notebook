@@ -13,10 +13,25 @@ int main()
 
     obj_poject work;
 
-    string str_1 = "add_project";
-    string str_2 = "prj_test_1";
+    string str_1 = "";
+    string str_2 = "";
 
-    //work.main_work(str_1,str_2);
+    if(false){// если нужно создать проект поменять на true
+        str_1 = "add_project";
+        str_2 = "prj_test_1";
+        work.main_work(str_1,str_2);// команда создания проекта
+    }else {//открываем существующий проект
+        str_1 = "givin_name";
+        str_2 = "prj_test_1";
+        work.main_work(str_1,str_2);
+    }
+
+
+    str_1 = "add_fail";
+    str_2 = "Тути_фрути";
+
+    work.main_work(str_1,str_2);// команда добавления файлов
+
 
 
     /*system("mkdir tets");
